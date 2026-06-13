@@ -1,4 +1,4 @@
-# gruber-darker.nvim
+# tsoding.nvim
 
 A Neovim port of [rexim](https://github.com/rexim)'s [Gruber Darker](https://github.com/rexim/gruber-darker-theme) theme (originally an Emacs theme by Jason Blevins).
 
@@ -7,13 +7,13 @@ A Neovim port of [rexim](https://github.com/rexim)'s [Gruber Darker](https://git
 ```lua
 -- lazy.nvim
 {
-  "tsoding/gruber-darker.nvim",
+  "tsoding/tsoding.nvim",
   lazy = false,
   priority = 1000,
   opts = {},
   config = function(_, opts)
-    require("gruber-darker").setup(opts)
-    vim.cmd.colorscheme("gruber-darker")
+    require("tsoding").setup(opts)
+    vim.cmd.colorscheme("tsoding")
   end,
 }
 ```
@@ -21,13 +21,13 @@ A Neovim port of [rexim](https://github.com/rexim)'s [Gruber Darker](https://git
 ## Usage
 
 ```lua
-vim.cmd.colorscheme("gruber-darker")
+vim.cmd.colorscheme("tsoding")
 ```
 
 Or with options:
 
 ```lua
-require("gruber-darker").setup({
+require("tsoding").setup({
   transparent = false,
   italics = {
     comments  = true,
@@ -37,24 +37,24 @@ require("gruber-darker").setup({
     variables = false,
   },
 })
-vim.cmd.colorscheme("gruber-darker")
+vim.cmd.colorscheme("tsoding")
 ```
 
 ## API
 
-- `require("gruber-darker").setup(opts)` — configure options
-- `require("gruber-darker").colorscheme()` — apply the colorscheme
-- `require("gruber-darker").lualine()` — get a lualine theme table
-- `require("gruber-darker").colors()` — get the palette color table
+- `require("tsoding").setup(opts)` — configure options
+- `require("tsoding").colorscheme()` — apply the colorscheme
+- `require("tsoding").lualine()` — get a lualine theme table
+- `require("tsoding").colors()` — get the palette color table
 
 ## Structure
 
 ```
-gruber-darker.nvim/
+tsoding.nvim/
 ├── colors/
-│   └── gruber-darker.lua        — colorscheme entry point
+│   └── tsoding.lua              — colorscheme entry point
 ├── lua/
-│   └── gruber-darker/
+│   └── tsoding/
 │       ├── init.lua             — public API (setup, colorscheme, lualine, colors)
 │       ├── palette.lua          — color definitions
 │       └── highlights.lua       — highlight groups
@@ -67,4 +67,3 @@ gruber-darker.nvim/
 - [Alexey Kutepov (rexim)](https://github.com/rexim) — Gruber Darker port
 - [Khatib Omar (khatibomar)](https://github.com/khatibomar) — gopher.nvim (inspiration for plugin structure)
 - [Tsoding](https://github.com/tsoding) — coding philosophy
-# tsoding.nvim
